@@ -275,52 +275,33 @@
                         <span class="minifyme" data-action="minifyMenu"> 
                             <i class="fa fa-arrow-circle-left hit"></i> 
                         </span>
-
                     </aside>
-                    <!-- END NAVIGATION -->
-
-                    <!-- MAIN PANEL -->
                     <div id="main" role="main">
-
-                        <!-- RIBBON -->
                         <div id="ribbon">
-
                             <span class="ribbon-button-alignment"> 
                                 <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
                                     <i class="fa fa-refresh"></i>
                                 </span> 
                             </span>
-
-                            <!-- breadcrumb -->
                             <ol class="breadcrumb">
-                                <li>Home></li><li>Forms</li><li>Smart Form Layouts</li>
+                                <li>Dasboard ></li><li>ToDo</li><li>Create New ToDo</li>
                             </ol>
-
                         </div>
-                        <!-- END RIBBON -->
-
-                        <!-- MAIN CONTENT -->
                         <div id="content">
-
-
             <div class="row">
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                     <h1 class="page-title txt-color-blueDark">
-                        
-                        <!-- PAGE HEADER -->
                         <i class="fa-fw fa fa-pencil-square-o"></i> 
-                            Forms
+                            ToDo's
                         <span>>  
-                            Form Layouts
+                             New ToDo
                         </span>
                     </h1>
                 </div>
             </div>
-            <div class="alert alert-block alert-success">                
-                <p>
+            <!--<div class="alert alert-block alert-success">                
                     You may also check the form validation by clicking on the form action button. Please try and see the results below!
-                </p>
-            </div>
+            </div>-->
 
             <!-- widget grid -->
             <section id="widget-grid" class="">
@@ -328,13 +309,13 @@
                 <div class="row">
 
                     <!-- NEW COL START -->
-                    <article class="col-sm-12 col-md-12 col-lg-6">
+                    <article class="col-sm-12 col-md-12 col-lg-12">
                         
                         <!-- Widget ID (each widget will need unique ID)-->
-                        <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+                        <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-custombutton="false">
                             <header>
                                 <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                                <h2>Checkout Form </h2>				
+                                <h2>Create New TODO </h2>				
                             </header>
                             <div>
                                 <div class="jarviswidget-editbox">
@@ -342,75 +323,78 @@
                                 <div class="widget-body no-padding">
                                     <form id="checkout-form" class="smart-form" novalidate="novalidate">
                                         <fieldset>
-                                            <section>
-                                                <label for="address2" class="input">
-                                                    <input type="text" name="address2" id="address2" placeholder="Enter Task Name ...">
-                                                </label>
-                                            </section>
-
-                                            <section>
-                                                <label class="textarea"> 										
-                                                    <textarea rows="5" name="info" placeholder="Enter Task description ..."></textarea> 
-                                                </label>
-                                            </section>
+                                            <div class="row">
+                                                 <section class="col col-10">
+                                                    <label for="taskName" class="input">
+                                                        <input type="text" name="taskName" id="taskName" placeholder="Enter Task Name ...">
+                                                    </label>
+                                                </section>
+                                                <section class="col col-2">
+                                                    <label class="select">
+                                                        <select name="taskPriority">
+                                                            <option value="0" selected="" disabled="">Select Priority</option>
+                                                            <option value="1">Low</option>
+                                                            <option value="1">Medium</option>
+                                                            <option value="3">High</option>
+                                                            <option value="4">Critical</option>
+                                                        </select> <i></i> </label>
+                                                </section>
+                                            </div>
                                         </fieldset>
 
                                         <fieldset>
                                             <div class="row">
-                                                <section class="col col-8">
+                                                <section class="col col-3">
                                                     <label class="input"> <i class="icon-append fa fa-calendar"></i>
                                                         <input type="text" name="startdate" id="startdate" placeholder="Expected start date">
                                                     </label>
                                                 </section>
-                                                <section class="col col-4">
+                                                <section class="col col-2">
+                                                    <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+                                                        <input type="text" class="form-control" value="13:14">
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-time"></span>
+                                                        </span>
+                                                    </div>
+                                                </section>
+                                                <section class="col col-1">
                                                     <label class="select">
-                                                        <select name="month">
-                                                            <option value="0" selected="" disabled="">Time</option>
-                                                            <option value="1">January</option>
-                                                            <option value="1">February</option>
-                                                            <option value="3">March</option>
-                                                            <option value="4">April</option>
-                                                            <option value="5">May</option>
-                                                            <option value="6">June</option>
-                                                            <option value="7">July</option>
-                                                            <option value="8">August</option>
-                                                            <option value="9">September</option>
-                                                            <option value="10">October</option>
-                                                            <option value="11">November</option>
-                                                            <option value="12">December</option>
+                                                        <select name="startFormat">
+                                                            <option value="0" selected="" disabled="">Format</option>
+                                                            <option value="1">AM</option>
+                                                            <option value="2">PM</option>
                                                         </select> <i></i> </label>
                                                 </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-8">
+
+                                                <section class="col col-3">
                                                     <label class="input"> <i class="icon-append fa fa-calendar"></i>
                                                         <input type="text" name="finishdate" id="finishdate" placeholder="Expected finish date">
                                                     </label>
                                                 </section>
-                                                <section class="col col-4">
+                                                <section class="col col-2">
+                                                    <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+                                                        <input type="text" class="form-control" value="13:14">
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-time"></span>
+                                                        </span>
+                                                    </div>
+                                                </section>
+                                                <section class="col col-1">
                                                     <label class="select">
-                                                        <select name="month">
-                                                            <option value="0" selected="" disabled="">Time</option>
-                                                            <option value="1">January</option>
-                                                            <option value="1">February</option>
-                                                            <option value="3">March</option>
-                                                            <option value="4">April</option>
-                                                            <option value="5">May</option>
-                                                            <option value="6">June</option>
-                                                            <option value="7">July</option>
-                                                            <option value="8">August</option>
-                                                            <option value="9">September</option>
-                                                            <option value="10">October</option>
-                                                            <option value="11">November</option>
-                                                            <option value="12">December</option>
+                                                        <select name="endFormat">
+                                                            <option value="0" selected="" disabled="">Format</option>
+                                                            <option value="1">AM</option>
+                                                            <option value="2">PM</option>
                                                         </select> <i></i> </label>
                                                 </section>
                                             </div>
-                                            <section>
-                                                <label class="textarea"> <i class="icon-append fa fa-comment"></i> 										
-                                                    <textarea rows="5" name="comment" placeholder="Tell us about your project"></textarea> 
-                                                </label>
-                                            </section>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="textarea"> <i class="icon-append fa fa-comment"></i> 										
+                                                        <textarea rows="5" name="comment" placeholder="Tell us about your project"></textarea> 
+                                                    </label>
+                                                </section>
+                                            </div>
                                         </fieldset>
                                         <footer>
                                             <button type="submit" class="btn btn-primary">
@@ -422,6 +406,7 @@
                                 </div>
                                 <!-- end widget content -->
                                 
+                                
                             </div>
                             <!-- end widget div -->
                             
@@ -430,83 +415,6 @@
                     </article>
                     <!-- END COL -->
 
-                    <!-- NEW COL START -->
-                    <article class="col-sm-12 col-md-12 col-lg-6">
-                        <div class="jarviswidget jarviswidget-color-blue" id="wid-id-4" data-widget-editbutton="false" data-widget-colorbutton="false">
-								<header>
-									<span class="widget-icon"> <i class="fa fa-check txt-color-white"></i> </span>
-									<h2> ToDo's </h2>
-								</header>
-								<div>
-									<div class="jarviswidget-editbox">
-										<div>
-											<label>Title:</label>
-											<input type="text" />
-										</div>
-									</div>
-									<div class="widget-body no-padding smart-form">
-										<h5 class="todo-group-title"><i class="fa fa-warning"></i> Critical Tasks (<small class="num-of-tasks">1</small>)</h5>
-										<ul id="sortable1" class="todo">
-											<li>
-												<span class="handle"> <label class="checkbox">
-														<input type="checkbox" name="checkbox-inline">
-														<i></i> </label> </span>
-												<p>
-													<strong>Ticket #17643</strong> - Hotfix for WebApp interface issue [<a href="javascript:void(0);" class="font-xs">More Details</a>] <span class="text-muted">Sea deep blessed bearing under darkness from God air living isn't. </span>
-													<span class="date">Jan 1, 2014</span>
-												</p>
-											</li>
-										</ul>
-										<h5 class="todo-group-title"><i class="fa fa-exclamation"></i> Important Tasks (<small class="num-of-tasks">3</small>)</h5>
-										<ul id="sortable2" class="todo">
-											<li>
-												<span class="handle"> <label class="checkbox">
-														<input type="checkbox" name="checkbox-inline">
-														<i></i> </label> </span>
-												<p>
-													<strong>Ticket #1347</strong> - Inbox email is being sent twice <small>(bug fix)</small> [<a href="javascript:void(0);" class="font-xs">More Details</a>] <span class="date">Nov 22, 2013</span>
-												</p>
-											</li>
-											<li>
-												<span class="handle"> <label class="checkbox">
-														<input type="checkbox" name="checkbox-inline">
-														<i></i> </label> </span>
-												<p>
-													<strong>Ticket #1314</strong> - Call customer support re: Issue <a href="javascript:void(0);" class="font-xs">#6134</a><small>(code review)</small>
-													<span class="date">Nov 22, 2013</span>
-												</p>
-											</li>
-											<li>
-												<span class="handle"> <label class="checkbox">
-														<input type="checkbox" name="checkbox-inline">
-														<i></i> </label> </span>
-												<p>
-													<strong>Ticket #17643</strong> - Hotfix for WebApp interface issue [<a href="javascript:void(0);" class="font-xs">More Details</a>] <span class="text-muted">Sea deep blessed bearing under darkness from God air living isn't. </span>
-													<span class="date">Jan 1, 2014</span>
-												</p>
-											</li>
-										</ul>
-
-										<h5 class="todo-group-title"><i class="fa fa-check"></i> Completed Tasks (<small class="num-of-tasks">1</small>)</h5>
-										<ul id="sortable3" class="todo">
-											<li class="complete">
-												<span class="handle" style="display:none"> <label class="checkbox state-disabled">
-														<input type="checkbox" name="checkbox-inline" checked="checked" disabled="disabled">
-														<i></i> </label> </span>
-												<p>
-													<strong>Ticket #17643</strong> - Hotfix for WebApp interface issue [<a href="javascript:void(0);" class="font-xs">More Details</a>] <span class="text-muted">Sea deep blessed bearing under darkness from God air living isn't. </span>
-													<span class="date">Jan 1, 2014</span>
-												</p>
-											</li>
-										</ul>
-
-										<!-- end content -->
-									</div>
-
-								</div>
-								<!-- end widget div -->
-							</div>
-                    </article>
                 </div>
             </section>
                         </div>
@@ -588,6 +496,9 @@
                     </div>
                     <!-- END SHORTCUT AREA -->
                     <script type="text/javascript">
+                        $('.clockpicker').clockpicker();
+                    </script>    
+                     <script type="text/javascript">
                     $(document).ready(function() {
                         
                         pageSetUp();
@@ -694,78 +605,6 @@
                             }
                         });
                                 
-                        var $registerForm = $("#smart-form-register").validate({
-                
-                            // Rules for form validation
-                            rules : {
-                                username : {
-                                    required : true
-                                },
-                                email : {
-                                    required : true,
-                                    email : true
-                                },
-                                password : {
-                                    required : true,
-                                    minlength : 3,
-                                    maxlength : 20
-                                },
-                                passwordConfirm : {
-                                    required : true,
-                                    minlength : 3,
-                                    maxlength : 20,
-                                    equalTo : '#password'
-                                },
-                                firstname : {
-                                    required : true
-                                },
-                                lastname : {
-                                    required : true
-                                },
-                                gender : {
-                                    required : true
-                                },
-                                terms : {
-                                    required : true
-                                }
-                            },
-                
-                            // Messages for form validation
-                            messages : {
-                                login : {
-                                    required : 'Please enter your login'
-                                },
-                                email : {
-                                    required : 'Please enter your email address',
-                                    email : 'Please enter a VALID email address'
-                                },
-                                password : {
-                                    required : 'Please enter your password'
-                                },
-                                passwordConfirm : {
-                                    required : 'Please enter your password one more time',
-                                    equalTo : 'Please enter the same password as above'
-                                },
-                                firstname : {
-                                    required : 'Please select your first name'
-                                },
-                                lastname : {
-                                    required : 'Please select your last name'
-                                },
-                                gender : {
-                                    required : 'Please select your gender'
-                                },
-                                terms : {
-                                    required : 'You must agree with Terms and Conditions'
-                                }
-                            },
-                
-                            // Do not change code below
-                            errorPlacement : function(error, element) {
-                                error.insertAfter(element.parent());
-                            }
-                        });
-                
                         // START AND FINISH DATE
                         $('#startdate').datepicker({
                             dateFormat : 'dd.mm.yy',
@@ -785,7 +624,8 @@
                             }
                         });
                     })
-                    </script>
+                    </script> 
+                    
 
                     <!-- Your GOOGLE ANALYTICS CODE Below -->
                     <script type="text/javascript">
