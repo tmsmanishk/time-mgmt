@@ -262,10 +262,16 @@
                                 </li>
                                
                                 <li>
-                                    <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Graphs</span></a>
+                                    <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Tasks</span></a>
                                     <ul>
+                                        <li class="active">
+                                            <a href="createTask.html" class="active">Create Task</a>
+                                        </li>
                                         <li>
-                                            <a href="taskMgmt.html">Create/View Tasks</a>
+                                            <a href="taskMgmt.html">Manage Tasks</a>
+                                        </li>
+                                        <li>
+                                            <a href="viewTasks.html" class="active">View All Tasks</a>
                                         </li>
                                         
                                     </ul>
@@ -324,17 +330,25 @@
                                     <form id="checkout-form" class="smart-form" novalidate="novalidate">
                                         <fieldset>
                                             <div class="row">
-                                                 <section class="col col-10">
+                                                 <section class="col col-8">
                                                     <label for="taskName" class="input">
                                                         <input type="text" name="taskName" id="taskName" placeholder="Enter Task Name ...">
                                                     </label>
                                                 </section>
                                                 <section class="col col-2">
                                                     <label class="select">
+                                                        <select name="taskType">
+                                                            <option value="0" selected="" disabled="">Task Type</option>
+                                                            <option value="1">Bug</option>
+                                                            <option value="2">Story</option>
+                                                        </select> <i></i> </label>
+                                                </section>
+                                                <section class="col col-2">
+                                                    <label class="select">
                                                         <select name="taskPriority">
-                                                            <option value="0" selected="" disabled="">Select Priority</option>
+                                                            <option value="0" selected="" disabled="">Task Priority</option>
                                                             <option value="1">Low</option>
-                                                            <option value="1">Medium</option>
+                                                            <option value="2">Medium</option>
                                                             <option value="3">High</option>
                                                             <option value="4">Critical</option>
                                                         </select> <i></i> </label>
