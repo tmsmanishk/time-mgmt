@@ -280,19 +280,19 @@
 										<div class="wizard">
 											<ul class="steps">
 												<li data-target="#step1" class="active">
-													<span class="badge badge-info">1</span>Step 1<span class="chevron"></span>
+													<span class="badge badge-info">1</span>User info<span class="chevron"></span>
 												</li>
 												<li data-target="#step2">
-													<span class="badge">2</span>Step 2<span class="chevron"></span>
+													<span class="badge">2</span>Account<span class="chevron"></span>
 												</li>
 												<li data-target="#step3">
-													<span class="badge">3</span>Step 3<span class="chevron"></span>
+													<span class="badge">3</span>Access<span class="chevron"></span>
 												</li>
 												<li data-target="#step4">
-													<span class="badge">4</span>Step 4<span class="chevron"></span>
+													<span class="badge">4</span>Verify<span class="chevron"></span>
 												</li>
 												<li data-target="#step5">
-													<span class="badge">5</span>Step 5<span class="chevron"></span>
+													<span class="badge">5</span>Finish<span class="chevron"></span>
 												</li>
 											</ul>
 											<div class="actions">
@@ -391,66 +391,104 @@
                                                     </fieldset>
 												</div>
 												<div class="step-pane" id="step2">
-													<h3><strong>Step 2 </strong> - Alerts</h3>
-													<div class="alert alert-warning fade in">
-														<button class="close" data-dismiss="alert">
-															×
-														</button>
-														<i class="fa-fw fa fa-warning"></i>
-														<strong>Warning</strong> Your monthly traffic is reaching limit.
-													</div>
-				
-													<div class="alert alert-success fade in">
-														<button class="close" data-dismiss="alert">
-															×
-														</button>
-														<i class="fa-fw fa fa-check"></i>
-														<strong>Success</strong> The page has been added.
-													</div>
-				
-													<div class="alert alert-info fade in">
-														<button class="close" data-dismiss="alert">
-															×
-														</button>
-														<i class="fa-fw fa fa-info"></i>
-														<strong>Info!</strong> You have 198 unread messages.
-													</div>
-				
-													<div class="alert alert-danger fade in">
-														<button class="close" data-dismiss="alert">
-															×
-														</button>
-														<i class="fa-fw fa fa-times"></i>
-														<strong>Error!</strong> The daily cronjob has failed.
-													</div>
+													<h3><strong>Step 2 </strong> - Credential</h3>
+													<fieldset>
+                                                        <div class="form-group">                                                            
+                                                            <div class="col-md-4">
+                                                                <div class="input-group">
+																	<input class="form-control" type="text" name="emailId" id="emailId" placeholder="Email ID">
+																	<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+																</div>
+                                                            </div>
+															<div class="col-md-4">
+																<div class="input-group">
+																	<input class="form-control" type="text" name="userName" id="userName" placeholder="Username">
+																	<span class="input-group-addon"><i class="fa fa-user"></i></span>
+																</div>
+                                                            </div>
+                                                            <div class="col-md-4">
+																<div class="input-group">
+																	<input class="form-control" type="text" name="password" id="password" placeholder="Password">
+																	<span class="input-group-addon"><i class="fa fa-key"></i></span>
+																</div>
+															</div>
+														</div>
+                                                    </fieldset>
 												</div>
 												<div class="step-pane" id="step3">
-													<h3><strong>Step 3 </strong> - Wizard continued</h3>
-													<br>
-													<br>
-													<h1 class="text-center text-primary"> This will be your Step 3 </h1>
-													<br>
-													<br>
-													<br>
-													<br>
+													<h3><strong>Step 3 </strong> - Access level</h3>
+													<fieldset>
+                                                        <div class="form-group">  
+                                                            <div class="col-md-4">
+
+                                                            </div>                                                          
+                                                            <div class="col-md-4">
+                                                                <div class="input-group">
+																	<select name="city" class="form-control">
+                                                                            <option value="" selected="selected" disabled="">Select Access Level</option>
+                                                                            <option value="superuser">Superuser</option>
+                                                                            <option value="administrator">Administrator</option>
+                                                                            <option value="supervisor">Supervisor</option>
+                                                                            <option value="manager">Manager</option>
+                                                                            <option value="lead">Lead</option>
+                                                                            <option value="employee">Employee</option>
+                                                                    </select>
+                                                                    <span class="input-group-addon"><i class="fa fa-tags"></i></span>
+																</div>
+                                                            </div>
+															<div class="col-md-4"></div>
+														</div>
+                                                    </fieldset>
 												</div>
 												<div class="step-pane" id="step4">
-													<h3><strong>Step 4 </strong> - Wizard continued...</h3>
-													<br>
-													<br>
-													<h1 class="text-center text-danger"> This will be your Step 4 </h1>
-													<br>
-													<br>
-													<br>
-													<br>
-												</div>
+                                                    <h3><strong>Step 3 </strong> - Verify User Details</h3>
+                                                    <div class="row">
+                                                        <div class="col-sm-2">
+                                                            <i class="fa fa-user"></i> User Name: 
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="txt-color-darken">My Full Name</span>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <i class="fa fa-user"></i> Date of Birth: 
+                                                        </div>
+                                                        <div class="col-sm-1">
+                                                            <span class="txt-color-darken">26/09/1991</span>
+                                                        </div>
+                                                        <div class="col-sm-1">
+                                                            <i class="fa fa-user"></i>Gender: 
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="txt-color-darken">Female</span>
+                                                        </div>
+                                                        <div class="col-sm-1">
+                                                            <i class="fa fa-user"></i> Email ID: 
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <a href="mailto:simmons@smartadmin">ceo@smartadmin.com</a>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <i class="fa fa-user"></i> Phone No: 
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <span class="txt-color-darken">xxxxxxxxxx</span>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <i class="fa fa-building"></i>Company: 
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="txt-color-darken">ABC Pvt Ltd</span>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
 												<div class="step-pane" id="step5">
 													<h3><strong>Step 5 </strong> - Finished!</h3>
 													<br>
 													<br>
-													<h1 class="text-center text-success"><i class="fa fa-check"></i> Congratulations!
+													<h1 class="text-center text-success"><i class="fa fa-check"></i> All set!
 													<br>
-													<small>Click finish to end wizard</small></h1>
+													<small>Click finish to save user details</small></h1>
 													<br>
 													<br>
 													<br>
@@ -637,6 +675,30 @@
                     $('#dateOfBirth').datepicker('option', 'minDate', selectedDate);
                 }
             });
+
+            /*
+		     * X-EDITABLES
+		     */
+		
+		
+		    //defaults
+		    $.fn.editable.defaults.url = '/post';
+		    //$.fn.editable.defaults.mode = 'inline'; use this to edit inline
+
+            //enable / disable
+		    $('#enable').click(function () {
+		        $('#user .editable').editable('toggleDisabled');
+            });
+            
+             //editables
+		    $('#uname').editable({
+		        url: '/post',
+		        type: 'text',
+		        pk: 1,
+		        name: 'uname',
+		        title: 'Enter username'
+		    });
+
 		})
 		</script>
 		<script type="text/javascript">
