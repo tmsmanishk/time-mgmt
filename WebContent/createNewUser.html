@@ -2,30 +2,19 @@
 <html lang="en-us">
 	<head>
 		<meta charset="utf-8">
-		<title> SmartAdmin </title>
+		<title> Create New User </title>
 		<meta name="description" content="">
 		<meta name="author" content="">
-			
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="import" href="css-list.html">
         <link rel="import" href="js-list.html">
 	</head>
 	<body class="">
 		<header id="header">
-			<div id="logo-group">
-
-				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="static/img/logo.png" alt="SmartAdmin"> </span>
-				<!-- END LOGO PLACEHOLDER -->
-
-				<!-- Note: The activity badge color changes when clicked and resets the number to 0
-					 Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-				<span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
-
-				<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+            <div id="logo-group">
+                <span id="logo"> <img src="static/img/logo.png" alt="SmartAdmin"> </span>
+                <span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
 				<div class="ajax-dropdown">
-
-					<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
 					<div class="btn-group btn-group-justified" data-toggle="buttons">
 						<label class="btn btn-default">
 							<input type="radio" name="activity" id="static/ajax/notify/mail.html">
@@ -37,38 +26,22 @@
 							<input type="radio" name="activity" id="static/ajax/notify/tasks.html">
 							Tasks (4) </label>
 					</div>
-
-					<!-- notification content -->
 					<div class="ajax-notifications custom-scroll">
-
 						<div class="alert alert-transparent">
 							<h4>Click a button to show messages here</h4>
 							This blank page message helps protect your privacy, or you can show the first message here automatically.
 						</div>
-
 						<i class="fa fa-lock fa-4x fa-border"></i>
-
 					</div>
-					<!-- end notification content -->
-
-					<!-- footer: refresh area -->
 					<span> Last updated on: 12/12/2013 9:43AM
 						<button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
 							<i class="fa fa-refresh"></i>
 						</button> </span>
-					<!-- end footer -->
-
 				</div>
-				<!-- END AJAX-DROPDOWN -->
 			</div>
-
-			<!-- #PROJECTS: projects dropdown -->
 			<div class="project-context hidden-xs">
-
 				<span class="label">Projects:</span>
 				<span class="project-selector dropdown-toggle" data-toggle="dropdown">Recent projects <i class="fa fa-angle-down"></i></span>
-
-				<!-- Suggestion: populate this list with fetch and push technique -->
 				<ul class="dropdown-menu">
 					<li>
 						<a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
@@ -84,23 +57,11 @@
 						<a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
 					</li>
 				</ul>
-				<!-- end dropdown-menu-->
-
 			</div>
-			<!-- end projects dropdown -->
-
-			<!-- #TOGGLE LAYOUT BUTTONS -->
-			<!-- pulled right: nav area -->
 			<div class="pull-right">
-				
-				<!-- collapse menu button -->
 				<div id="hide-menu" class="btn-header pull-right">
 					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
 				</div>
-				<!-- end collapse menu -->
-				
-				<!-- #MOBILE -->
-				<!-- Top menu profile link : this shows only when top menu is active -->
 				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
 					<li class="">
 						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
@@ -129,37 +90,44 @@
 						</ul>
 					</li>
 				</ul>
-
-				<!-- logout button -->
 				<div id="logout" class="btn-header transparent pull-right">
 					<span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
 				</div>
-				<!-- end logout button -->
-
-				<!-- search mobile button (this is hidden till mobile view port) -->
 				<div id="search-mobile" class="btn-header transparent pull-right">
 					<span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
 				</div>
-				<!-- end search mobile button -->
-				
-				<!-- #SEARCH -->
-				<!-- input: search field -->
-				<form action="search.html" class="header-search pull-right">
-					<input id="search-fld" type="text" name="param" placeholder="Find reports and more">
+				<form action="static/search.html" class="header-search pull-right">
+					<input id="search-fld"  type="text" name="param" placeholder="Find reports and more" data-autocomplete='[
+					"ActionScript",
+					"AppleScript",
+					"Asp",
+					"BASIC",
+					"C",
+					"C++",
+					"Clojure",
+					"COBOL",
+					"ColdFusion",
+					"Erlang",
+					"Fortran",
+					"Groovy",
+					"Haskell",
+					"Java",
+					"JavaScript",
+					"Lisp",
+					"Perl",
+					"PHP",
+					"Python",
+					"Ruby",
+					"Scala",
+					"Scheme"]'>
 					<button type="submit">
 						<i class="fa fa-search"></i>
 					</button>
 					<a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
 				</form>
-				<!-- end input: search field -->
-
-				<!-- fullscreen button -->
 				<div id="fullscreen" class="btn-header transparent pull-right">
 					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
 				</div>
-				<!-- end fullscreen button -->
-				
-				<!-- #Voice Command: Start Speech -->
 				<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
 					<div> 
 						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
@@ -177,9 +145,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- end voice command -->
-
-				<!-- multiple lang dropdown : find all flags in the flags page -->
 				<ul class="header-dropdown-list hidden-xs">
 					<li>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="static/img/blank.gif" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
@@ -214,11 +179,10 @@
 							<li>
 								<a href="javascript:void(0);"><img src="static/img/blank.gif" class="flag flag-kr" alt="Korea"> 한국어</a>
 							</li>						
-							
 						</ul>
 					</li>
 				</ul>
-			</div>
+            </div>
 		</header>
 		<aside id="left-panel">
 			<div class="login-info">
@@ -237,7 +201,6 @@
                     <li>
                         <a href="dashboard.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
                     </li>
-                    
                     <li>
                         <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Tasks</span></a>
                         <ul>
@@ -247,16 +210,16 @@
                             <li>
                                 <a href="taskMgmt.html">Manage Tasks</a>
                             </li>
-                            <li class="active">
-                                <a href="viewTasks.html" class="active">View All Tasks</a>
+                            <li>
+                                <a href="viewTasks.html">View All Tasks</a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">User Management</span></a>
                         <ul>
-                            <li>
-                                <a href="createNewUser.html">Create New User</a>
+                            <li class="active">
+                                <a href="createNewUser.html" class="active">Create New User</a>
                             </li>
                             <li>
                                 <a href="manageUsers.html">Manage Users</a>
@@ -271,14 +234,8 @@
 			<span class="minifyme" data-action="minifyMenu"> 
 				<i class="fa fa-arrow-circle-left hit"></i> 
 			</span>
-
 		</aside>
-		<!-- END NAVIGATION -->
-
-		<!-- MAIN PANEL -->
 		<div id="main" role="main">
-
-			<!-- RIBBON -->
 			<div id="ribbon">
 				<span class="ribbon-button-alignment"> 
 					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
@@ -286,32 +243,17 @@
 					</span> 
 				</span>
 				<ol class="breadcrumb">
-					<li>Home</li><li>App Views</li><li>Projects</li>
+					<li>Home</li><li>User Management</li><li>Create New User</li>
 				</ol>
 			</div>
 			<div id="content">
-				<!-- row -->
 				<div class="row">
-					
-					<!-- col -->
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-						<h1 class="page-title txt-color-blueDark">
-							
-							<!-- PAGE HEADER -->
-							<i class="fa-fw fa fa-puzzle-piece"></i> 
-								App Views 
-							<span>>  
-								Project
-							</span>
-						</h1>
+						<h1 class="page-title txt-color-blueDark"><i class="fa fa-pencil-square-o fa-fw "></i> User Management <span>>
+							Create New User </span></h1>
 					</div>
-					<!-- end col -->
-					
-					<!-- right side of the page with the sparkline graphs -->
-					<!-- col -->
 					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
-						<!-- sparks -->
-						<ul id="sparks">
+						<ul id="sparks" class="">
 							<li class="sparks-info">
 								<h5> My Income <span class="txt-color-blue">$47,171</span></h5>
 							</li>
@@ -326,46 +268,200 @@
 				</div>
 				<section id="widget-grid" class="">
 					<div class="row">
-						<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<div class="alert alert-info">
-								<strong>NOTE:</strong> All the data is loaded from a seperate JSON file
-							</div>
-							<div class="jarviswidget well" id="wid-id-0">
+						<article class="col-sm-12 col-md-12 col-lg-12">
+							<div class="jarviswidget" id="wid-id-2" data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false">
 								<header>
-									<span class="widget-icon"> <i class="fa fa-comments"></i> </span>
-									<h2>Widget Title </h2>				
-									
+									<h2><i class="fa fa-user"></i> Create New User </h2>
 								</header>
 								<div>
 									<div class="jarviswidget-editbox">
-										<input class="form-control" type="text">	
 									</div>
-									<div class="widget-body no-padding">
-										<table id="example" class="display projects-table table table-striped table-bordered table-hover" cellspacing="0" width="100%">
-									        <thead>
-									            <tr>
-                                                    <th></th>
-                                                    <th>Task Name</th>
-                                                    <th><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Completions</th>
-									                <th>Assignee</th>
-									                <th>Status</th>
-                                                    <th><i class="fa fa-circle txt-color-darken font-xs"></i> Target/ 
-                                                        <i class="fa fa-circle text-danger font-xs"></i> Actual
-                                                    </th>
-									                <th><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs"></i> Starts</th>
-									                <th><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs"></i> Ends</th>
-									                <th>Tracker</th>
-									            </tr>
-									        </thead>
-									    </table>
+									<div class="widget-body fuelux">
+										<div class="wizard">
+											<ul class="steps">
+												<li data-target="#step1" class="active">
+													<span class="badge badge-info">1</span>Step 1<span class="chevron"></span>
+												</li>
+												<li data-target="#step2">
+													<span class="badge">2</span>Step 2<span class="chevron"></span>
+												</li>
+												<li data-target="#step3">
+													<span class="badge">3</span>Step 3<span class="chevron"></span>
+												</li>
+												<li data-target="#step4">
+													<span class="badge">4</span>Step 4<span class="chevron"></span>
+												</li>
+												<li data-target="#step5">
+													<span class="badge">5</span>Step 5<span class="chevron"></span>
+												</li>
+											</ul>
+											<div class="actions">
+												<button type="button" class="btn btn-sm btn-primary btn-prev">
+													<i class="fa fa-arrow-left"></i>Prev
+												</button>
+												<button type="button" class="btn btn-sm btn-success btn-next" data-last="Finish">
+													Next<i class="fa fa-arrow-right"></i>
+												</button>
+											</div>
+										</div>
+										<div class="step-content">
+											<form class="form-horizontal" id="fuelux-wizard" method="post">
+												<div class="step-pane active" id="step1">
+													<h3><strong>Step 1 </strong> - User Information</h3>
+													<fieldset>
+														<div class="form-group">
+                                                            <div class="col-md-4">
+                                                                <div class="input-group">
+																	<input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name">
+																	<span class="input-group-addon"><i class="fa fa-user"></i></span>
+																</div>
+                                                            </div>
+															<div class="col-md-4">
+																<div class="input-group">
+																	<input class="form-control" type="text" name="middleName" id="middleName" placeholder="Middle Name">
+																	<span class="input-group-addon"><i class="fa fa-user"></i></span>
+																</div>
+                                                            </div>
+                                                            <div class="col-md-4">
+																<div class="input-group">
+																	<input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name">
+																	<span class="input-group-addon"><i class="fa fa-user"></i></span>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<div class="col-md-4">
+                                                                <div class="input-group">
+                                                                    <input class="form-control" type="text" name="dateOfBirth" id="dateOfBirth" placeholder="Date of Birth">
+                                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                </div>
+                                                            </div>
+															<div class="col-sm-4">
+                                                                <div class="input-group">
+                                                                    <select class="form-control" name="gender">
+                                                                        <option value="" selected="" disabled="">Select Gender</option>
+                                                                        <option>Male</option>
+                                                                        <option>Female</option>
+                                                                        <option>Other</option>
+                                                                    </select>
+                                                                    <span class="input-group-addon"><i class="fa fa-child"></i></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+																<div class="input-group">
+																	<input class="form-control" type="email" name="email" id="email" placeholder="Email Id">
+																	<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<div class="col-md-4">
+                                                                <div class="input-group">
+																	<input class="form-control" type="text" name="companyName" id="companyName" placeholder="Company Name">
+																	<span class="input-group-addon"><i class="fa fa-building"></i></span>
+																</div>
+                                                            </div>
+															<div class="col-sm-3">
+                                                                    <div class="input-group">																			
+                                                                        <select name="country" class="form-control">
+                                                                            <option value="" selected="selected" disabled>Select Country</option>
+                                                                            <option value="United States">United States</option>
+                                                                            <option value="United Kingdom">United Kingdom</option>
+                                                                        </select>
+                                                                        <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                                                                    </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+																<div class="input-group">
+																	<select name="city" class="form-control">
+                                                                            <option value="" selected="selected" disabled="">Select City</option>
+                                                                            <option value="United States">Bangalore</option>
+                                                                            <option value="United Kingdom">Delhi</option>
+                                                                    </select>
+                                                                    <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+																</div>
+                                                            </div>
+                                                            <div class="col-md-2">
+																<div class="input-group">
+																	<input class="form-control" type="text" name="pinCode" id="pinCode" placeholder="Pin Code" data-mask="999999">
+                                                                    <span class="input-group-addon"><i class="fa fa-envelope-square"></i></span>
+																</div>
+															</div>
+														</div>
+                                                    </fieldset>
+												</div>
+												<div class="step-pane" id="step2">
+													<h3><strong>Step 2 </strong> - Alerts</h3>
+													<div class="alert alert-warning fade in">
+														<button class="close" data-dismiss="alert">
+															×
+														</button>
+														<i class="fa-fw fa fa-warning"></i>
+														<strong>Warning</strong> Your monthly traffic is reaching limit.
+													</div>
+				
+													<div class="alert alert-success fade in">
+														<button class="close" data-dismiss="alert">
+															×
+														</button>
+														<i class="fa-fw fa fa-check"></i>
+														<strong>Success</strong> The page has been added.
+													</div>
+				
+													<div class="alert alert-info fade in">
+														<button class="close" data-dismiss="alert">
+															×
+														</button>
+														<i class="fa-fw fa fa-info"></i>
+														<strong>Info!</strong> You have 198 unread messages.
+													</div>
+				
+													<div class="alert alert-danger fade in">
+														<button class="close" data-dismiss="alert">
+															×
+														</button>
+														<i class="fa-fw fa fa-times"></i>
+														<strong>Error!</strong> The daily cronjob has failed.
+													</div>
+												</div>
+												<div class="step-pane" id="step3">
+													<h3><strong>Step 3 </strong> - Wizard continued</h3>
+													<br>
+													<br>
+													<h1 class="text-center text-primary"> This will be your Step 3 </h1>
+													<br>
+													<br>
+													<br>
+													<br>
+												</div>
+												<div class="step-pane" id="step4">
+													<h3><strong>Step 4 </strong> - Wizard continued...</h3>
+													<br>
+													<br>
+													<h1 class="text-center text-danger"> This will be your Step 4 </h1>
+													<br>
+													<br>
+													<br>
+													<br>
+												</div>
+												<div class="step-pane" id="step5">
+													<h3><strong>Step 5 </strong> - Finished!</h3>
+													<br>
+													<br>
+													<h1 class="text-center text-success"><i class="fa fa-check"></i> Congratulations!
+													<br>
+													<small>Click finish to end wizard</small></h1>
+													<br>
+													<br>
+													<br>
+													<br>
+												</div>
+                                            </form>
+										</div>
 									</div>
 								</div>
 							</div>
 						</article>
-					</div>
-					<div class="row">
-						<div class="col-sm-12">
-						</div>
 					</div>
 				</section>
 			</div>
@@ -375,7 +471,6 @@
 				<div class="col-xs-12 col-sm-6">
 					<span class="txt-color-white">SmartAdmin 1.5 <span class="hidden-xs"> - Web Application Framework</span> © 2014-2015</span>
 				</div>
-
 				<div class="col-xs-6 col-sm-6 text-right hidden-xs">
 					<div class="txt-color-white inline-block">
 						<i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
@@ -444,113 +539,106 @@
 				</li>
 			</ul>
 		</div>
-		<!-- END SHORTCUT AREA -->
-
 		<script type="text/javascript">
-			$(document).ready(function() {
-				 pageSetUp();
-				function format ( d ) {
-				    // `d` is the original data object for the row
-				    return '<table cellpadding="5" cellspacing="0" border="0" class="table table-hover table-condensed">'+
-				        '<tr>'+
-				            '<td style="width:150px">Project Title:</td>'+
-				            '<td>'+d.name+'</td>'+
-				        '</tr>'+
-				        '<tr>'+
-				            '<td>Deadline:</td>'+
-				            '<td>'+d.ends+'</td>'+
-				        '</tr>'+
-                        '<tr>'+
-                            '<td>Change Status To:</td>'+
-                            '<td>'+
-                                '<a href="form-x-editable.html#" id="group" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-original-title="Select group">Admin</a>'+
-                            '</td>'+
-				        '</tr>'+
-				        '<tr>'+
-				            '<td>Comments:</td>'+
-				            '<td>'+d.comments+'</td>'+
-				        '</tr>'+
-				        '<tr>'+
-				            '<td>Action:</td>'+
-				            '<td>'+d.action+'</td>'+
-				        '</tr>'+
-				    '</table>';
-				}
-
-				// clears the variable if left blank
-			    var table = $('#example').DataTable( {
-			        "ajax": "static/data/dataList.json",
-			        "bDestroy": true,
-			        "iDisplayLength": 10,
-			        "columns": [
-			            {
-			                "class":          'details-control',
-			                "orderable":      false,
-			                "data":           null,
-			                "defaultContent": ''
-			            },
-			            { "data": "name" },
-			            { "data": "est" },
-			            { "data": "contacts" },
-			            { "data": "status" },
-			            { "data": "target-actual" },
-			            { "data": "starts" },
-			            { "data": "ends" },
-			            { "data": "tracker" },
-			        ],
-			        "order": [[1, 'asc']],
-			        "fnDrawCallback": function( oSettings ) {
-				       runAllCharts()
-				    }
-                } );
-                
-                $.mockjax({
-                    url: '/groups',
-                    response: function (settings) {
-                        this.responseText = [{
-                            value: 0,
-                            text: 'Guest'
-                        }, {
-                            value: 1,
-                            text: 'Service'
-                        }, {
-                            value: 2,
-                            text: 'Customer'
-                        }, {
-                            value: 3,
-                            text: 'Operator'
-                        }, {
-                            value: 4,
-                            text: 'Support'
-                        }, {
-                            value: 5,
-                            text: 'Admin'
-                        }];
-                        log(settings, this);
-                    }
-                });
-            
-                $('#group').editable({
-                    showbuttons: false
-                });
-                    
-			    // Add event listener for opening and closing details
-			    $('#example tbody').on('click', 'td.details-control', function () {
-			        var tr = $(this).closest('tr');
-			        var row = table.row( tr );
-			 
-			        if ( row.child.isShown() ) {
-			            row.child.hide();
-			            tr.removeClass('shown');
-			        }
-			        else {
-			            row.child( format(row.data()) ).show();
-			            tr.addClass('shown');
-			        }
+		$(document).ready(function() {
+			pageSetUp();
+			  var $validator = $("#wizard-1").validate({
+			    rules: {
+			      email: {
+			        required: true,
+			        email: "Your email address must be in the format of name@domain.com"
+			      },
+			      fname: {
+			        required: true
+			      },
+			      lname: {
+			        required: true
+			      },
+			      country: {
+			        required: true
+			      },
+			      city: {
+			        required: true
+			      },
+			      postal: {
+			        required: true,
+			        minlength: 4
+			      },
+			      wphone: {
+			        required: true,
+			        minlength: 10
+			      },
+			      hphone: {
+			        required: true,
+			        minlength: 10
+			      }
+			    },
+			    messages: {
+			      fname: "Please specify your First name",
+			      lname: "Please specify your Last name",
+			      email: {
+			        required: "We need your email address to contact you",
+			        email: "Your email address must be in the format of name@domain.com"
+			      }
+			    },
+			    highlight: function (element) {
+			      $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+			    },
+			    unhighlight: function (element) {
+			      $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+			    },
+			    errorElement: 'span',
+			    errorClass: 'help-block',
+			    errorPlacement: function (error, element) {
+			      if (element.parent('.input-group').length) {
+			        error.insertAfter(element.parent());
+			      } else {
+			        error.insertAfter(element);
+			      }
+			    }
+			  });
+			  
+			  $('#bootstrap-wizard-1').bootstrapWizard({
+			    'tabClass': 'form-wizard',
+			    'onNext': function (tab, navigation, index) {
+			      var $valid = $("#wizard-1").valid();
+			      if (!$valid) {
+			        $validator.focusInvalid();
+			        return false;
+			      } else {
+			        $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).addClass(
+			          'complete');
+			        $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).find('.step')
+			        .html('<i class="fa fa-check"></i>');
+			      }
+			    }
+			  });
+			// fuelux wizard
+			  var wizard = $('.wizard').wizard();
+			  
+			  wizard.on('finished', function (e, data) {
+			    //$("#fuelux-wizard").submit();
+			    //console.log("submitted!");
+			    $.smallBox({
+			      title: "Congratulations! Your form was submitted",
+			      content: "<i class='fa fa-clock-o'></i> <i>1 seconds ago...</i>",
+			      color: "#5F895F",
+			      iconSmall: "fa fa-check bounce animated",
+			      timeout: 4000
 			    });
-			})
+              });
+              
+            // START AND FINISH DATE
+            $('#dateOfBirth').datepicker({
+                dateFormat : 'dd/mm/yy',
+                prevText : '<i class="fa fa-chevron-left"></i>',
+                nextText : '<i class="fa fa-chevron-right"></i>',
+                onSelect : function(selectedDate) {
+                    $('#dateOfBirth').datepicker('option', 'minDate', selectedDate);
+                }
+            });
+		})
 		</script>
-		<!-- Your GOOGLE ANALYTICS CODE Below -->
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
@@ -564,9 +652,6 @@
 				var s = document.getElementsByTagName('script')[0];
 				s.parentNode.insertBefore(ga, s);
 			})();
-
 		</script>
-
 	</body>
-
 </html>
