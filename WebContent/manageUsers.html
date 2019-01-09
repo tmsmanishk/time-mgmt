@@ -388,7 +388,7 @@
                             '<td style="width:300px">'+d.ends+'</td>'+
                             '<td style="width:30px">Status:</td>'+
                             '<td style="width:300px">'+d.ends+'</td>'+
-                            '<td style="width:300px" colspan="2"><a href="#" id="smart-mod-eg5" class="btn btn-xs btn-danger">Reset Password</a></td>'+
+                            '<td style="width:300px" colspan="2"><a href="#" id="smart-mod-eg4" class="btn btn-xs btn-danger">Reset Password</a></td>'+
 				        '</tr>'+
                         '<tr>'+
                             '<td style="width:30px">Company:</td>'+
@@ -489,45 +489,18 @@
 			        }
                 });
 
-                $('.carousel.slide').carousel({
-                    interval : 3000,
-                    cycle : true
-                });
-                $('.carousel.fade').carousel({
-                    interval : 3000,
-                    cycle : true
-                });
-                
-                // With Login
-                $("#smart-mod-eg5").click(function(e) {
-            
-                    $.SmartMessageBox({
-                        title : "Login form",
-                        content : "Please enter your user name",
-                        buttons : "[Cancel][Accept]",
-                        input : "text",
-                        placeholder : "Enter your user name"
+                $("#smart-mod-eg4").click(function(e) {
+                     $.SmartMessageBox({
+                        title : "Reset Password",
+                        content : "Please select role of the user and then click reset button.",
+                        buttons : "[Cancel][Reset]",
+                        input : "select",
+                        options : "[Costa Rica][United States][Autralia][Spain]"
                     }, function(ButtonPress, Value) {
-                        if (ButtonPress == "Cancel") {
-                            alert("Why did you cancel that? :(");
-                            return 0;
-                        }
-            
-                        Value1 = Value.toUpperCase();
-                        ValueOriginal = Value;
-                        $.SmartMessageBox({
-                            title : "Hey! <strong>" + Value1 + ",</strong>",
-                            content : "And now please provide your password:",
-                            buttons : "[Login]",
-                            input : "password",
-                            placeholder : "Password"
-                        }, function(ButtonPress, Value) {
-                            alert("Username: " + ValueOriginal + " and your password is: " + Value);
-                        });
+                        alert(ButtonPress + " " + Value);
                     });
-            
-                    //e.preventDefault();
-                });
+                    e.preventDefault();
+			    });
 			})
 		</script>
 		<!-- Your GOOGLE ANALYTICS CODE Below -->
