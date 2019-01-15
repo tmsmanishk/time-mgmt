@@ -273,7 +273,8 @@
                                                     <th><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>Email</th>									                
 									                <th>Status</th>                                                   
 									                <th><i class="fa fa-calendar"></i> Date of Birth</th>
-									                <th><i class="fa fa-child"></i> Gender</th>
+                                                    <th><i class="fa fa-child"></i> Gender</th>
+                                                    <th><i class="fa fa-key"></i></th>
                                                     <th>Lock/Unlock</th>
 									            </tr>
 									        </thead>
@@ -436,7 +437,9 @@
 			            { "data": "status" },			            
 			            { "data": "starts" },
 			            { "data": "ends" },
-			            { "data": "tracker" },
+                        { "data": "changePassword"},
+                        { "data": "tracker" }
+                        
 			        ],
 			        "order": [[1, 'asc']],
 			        "fnDrawCallback": function( oSettings ) {

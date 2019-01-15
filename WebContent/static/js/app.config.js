@@ -39,7 +39,7 @@
 /*
  * GLOBAL: Sound Config (define sound path, enable or disable all sounds)
  */
-	$.sound_path = "sound/";
+	$.sound_path = "static/sound/";
 	$.sound_on = true; 
 /*
  * SAVE INSTANCE REFERENCE (DO NOT CHANGE)
@@ -308,7 +308,7 @@
 				}
 			},
 			'help' : function() {
-				$('#voiceModal').removeData('modal').modal( { remote: "ajax/modal-content/modal-voicecommand.html", show: true } );
+				$('#voiceModal').removeData('modal').modal( { remote: "static/ajax/modal-content/modal-voicecommand.html", show: true } );
 				if ($('#speech-btn .popover').is(':visible')) {
 					$('#speech-btn .popover').fadeOut(250);
 				}

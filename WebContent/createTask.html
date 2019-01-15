@@ -262,7 +262,7 @@
                                 </li>
                                
                                 <li>
-                                    <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Tasks</span></a>
+                                    <a href="#"><i class="fa fa-lg fa-fw fa-tasks"></i> <span class="menu-item-parent">Tasks</span></a>
                                     <ul>
                                         <li class="active">
                                             <a href="createTask.html" class="active">Create Task</a>
@@ -277,7 +277,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">User Management</span></a>
+                                    <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">User Management</span></a>
                                     <ul>
                                         <li>
                                             <a href="createNewUser.html">Create New User</a>
@@ -346,12 +346,12 @@
                                             <div class="row">
                                                  <section class="col col-8">
                                                     <label for="taskName" class="input">
-                                                        <input type="text" name="taskName" id="taskName" placeholder="Enter Task Name ...">
+                                                        <input type="text" name="taskName" id="taskName" placeholder="Enter Task Name ..." rel="tooltip" data-placement="top" data-original-title="Enter Task Name">
                                                     </label>
                                                 </section>
                                                 <section class="col col-2">
                                                     <label class="select">
-                                                        <select name="taskType">
+                                                        <select name="taskType" rel="tooltip" data-placement="top" data-original-title="Select Task Type">
                                                             <option value="0" selected="" disabled="">Task Type</option>
                                                             <option value="1">Bug</option>
                                                             <option value="2">Story</option>
@@ -359,7 +359,7 @@
                                                 </section>
                                                 <section class="col col-2">
                                                     <label class="select">
-                                                        <select name="taskPriority">
+                                                        <select name="taskPriority" rel="tooltip" data-placement="top" data-original-title="Select Task Priority">
                                                             <option value="0" selected="" disabled="">Task Priority</option>
                                                             <option value="1">Low</option>
                                                             <option value="2">Medium</option>
@@ -374,12 +374,12 @@
                                             <div class="row">
                                                 <section class="col col-3">
                                                     <label class="input"> <i class="icon-append fa fa-calendar"></i>
-                                                        <input type="text" name="startdate" id="startdate" placeholder="Expected start date">
+                                                        <input type="text" name="startdate" id="startdate" placeholder="Expected start date" rel="tooltip" data-placement="top" data-original-title="Expected start date">
                                                     </label>
                                                 </section>
                                                 <section class="col col-2">
                                                     <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-                                                        <input type="text" class="form-control" value="13:14">
+                                                        <input type="text" class="form-control" value="13:14" rel="tooltip" data-placement="top" data-original-title="Select start time">
                                                         <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-time"></span>
                                                         </span>
@@ -387,7 +387,7 @@
                                                 </section>
                                                 <section class="col col-1">
                                                     <label class="select">
-                                                        <select name="startFormat">
+                                                        <select name="startFormat" rel="tooltip" data-placement="top" data-original-title="Select AM/PM">
                                                             <option value="0" selected="" disabled="">Format</option>
                                                             <option value="1">AM</option>
                                                             <option value="2">PM</option>
@@ -396,12 +396,12 @@
 
                                                 <section class="col col-3">
                                                     <label class="input"> <i class="icon-append fa fa-calendar"></i>
-                                                        <input type="text" name="finishdate" id="finishdate" placeholder="Expected finish date">
+                                                        <input type="text" name="finishdate" id="finishdate" placeholder="Expected finish date" rel="tooltip" data-placement="top" data-original-title="Select finish date">
                                                     </label>
                                                 </section>
                                                 <section class="col col-2">
                                                     <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-                                                        <input type="text" class="form-control" value="13:14">
+                                                        <input type="text" class="form-control" value="13:14" rel="tooltip" data-placement="top" data-original-title="Select end time">
                                                         <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-time"></span>
                                                         </span>
@@ -409,7 +409,7 @@
                                                 </section>
                                                 <section class="col col-1">
                                                     <label class="select">
-                                                        <select name="endFormat">
+                                                        <select name="endFormat" rel="tooltip" data-placement="top" data-original-title="Select AM/PM">
                                                             <option value="0" selected="" disabled="">Format</option>
                                                             <option value="1">AM</option>
                                                             <option value="2">PM</option>
@@ -419,13 +419,13 @@
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="textarea"> <i class="icon-append fa fa-comment"></i> 										
-                                                        <textarea rows="5" name="comment" placeholder="Tell us about your project"></textarea> 
+                                                        <textarea rows="5" name="comment" placeholder="Tell us about your project"  rel="tooltip" data-placement="top" data-original-title="Enter task description"></textarea> 
                                                     </label>
                                                 </section>
                                             </div>
                                         </fieldset>
                                         <footer>
-                                            <button type="submit" class="btn btn-primary">
+                                            <button type="submit" class="btn btn-primary" rel="tooltip" data-placement="top" data-original-title="Click to create task">
                                                 Create Task
                                             </button>
                                         </footer>
