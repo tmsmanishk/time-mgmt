@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" ng-app = "myapp">
 	<head>
 		<meta charset="utf-8">
 		<title> Create New User </title>
@@ -8,6 +8,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="import" href="css-list.html">
         <link rel="import" href="js-list.html">
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+        <script src="resources/controller/UserController.js"></script>
 	</head>
 	<body class="">
 		<header id="header">
@@ -250,7 +252,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 						<h1 class="page-title txt-color-blueDark"><i class="fa fa-pencil-square-o fa-fw "></i> User Management <span>>
-							Create New User </span></h1>
+							Create New User </span></h1> {{helloTo.title}}
 					</div>
 					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
 						<ul id="sparks" class="">
@@ -299,32 +301,40 @@
 												<button type="button" class="btn btn-sm btn-primary btn-prev">
 													<i class="fa fa-arrow-left"></i>Prev
 												</button>
-												<button type="button" class="btn btn-sm btn-success btn-next" data-last="Finish">
+												<button type="button" class="btn btn-sm btn-success btn-next" data-last="Click below button">
 													Next<i class="fa fa-arrow-right"></i>
 												</button>
 											</div>
 										</div>
-										<div class="step-content">
-											<form class="form-horizontal" id="fuelux-wizard" method="post">
+										<div class="step-content" ng-controller = "UserCtrl">
+											<form class="form-horizontal" id="fuelux-wizard" ng-submit="createNewUser()">
 												<div class="step-pane active" id="step1">
-													<h3><strong>Step 1 </strong> - User Information</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <h3><strong>Step 1 </strong> - User Information</h3>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <button class="btn btn-warning pull-right" style="margin-top: 12%;" ng-click="infoReset();"><i class="fa fa-refresh"></i> Reset </button>
+                                                        </div>
+                                                    </div>
+                                                    
 													<fieldset>
 														<div class="form-group">
                                                             <div class="col-md-4">
                                                                 <div class="input-group">
-																	<input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name" rel="tooltip" data-placement="top" data-original-title="Enter First Name">
+																	<input class="form-control" type="text" ng-model="user.firstName" name="firstName" id="firstName" placeholder="First Name" rel="tooltip" data-placement="top" data-original-title="Enter First Name">
 																	<span class="input-group-addon"><i class="fa fa-user"></i></span>
 																</div>
                                                             </div>
 															<div class="col-md-4">
 																<div class="input-group">
-																	<input class="form-control" type="text" name="middleName" id="middleName" placeholder="Middle Name" rel="tooltip" data-placement="top" data-original-title="Enter Middle Name">
+																	<input class="form-control" type="text" ng-model="user.middleName" name="middleName" id="middleName" placeholder="Middle Name" rel="tooltip" data-placement="top" data-original-title="Enter Middle Name">
 																	<span class="input-group-addon"><i class="fa fa-user"></i></span>
 																</div>
                                                             </div>
                                                             <div class="col-md-4">
 																<div class="input-group">
-																	<input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name" rel="tooltip" data-placement="top" data-original-title="Enter Last Name">
+																	<input class="form-control" type="text" ng-model="user.lastName" name="lastName" id="lastName" placeholder="Last Name" rel="tooltip" data-placement="top" data-original-title="Enter Last Name">
 																	<span class="input-group-addon"><i class="fa fa-user"></i></span>
 																</div>
 															</div>
@@ -332,13 +342,13 @@
 														<div class="form-group">
 															<div class="col-md-4">
                                                                 <div class="input-group">
-                                                                    <input class="form-control" type="text" name="dateOfBirth" id="dateOfBirth" placeholder="Date of Birth" rel="tooltip" data-placement="top" data-original-title="Select Date Of Birth">
+                                                                    <input class="form-control" type="text" ng-model="user.dateOfBirth" name="dateOfBirth" id="dateOfBirth" placeholder="Date of Birth" rel="tooltip" data-placement="top" data-original-title="Select Date Of Birth">
                                                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                                 </div>
                                                             </div>
 															<div class="col-sm-4">
                                                                 <div class="input-group">
-                                                                    <select class="form-control" name="gender" rel="tooltip" data-placement="top" data-original-title="Select Gender">
+                                                                    <select class="form-control" name="gender" rel="tooltip" data-placement="top" data-original-title="Select Gender" ng-model="user.gender">
                                                                         <option value="" selected="" disabled="">Select Gender</option>
                                                                         <option>Male</option>
                                                                         <option>Female</option>
@@ -349,7 +359,7 @@
                                                             </div>
                                                             <div class="col-md-4">
 																<div class="input-group">
-																	<input class="form-control" type="email" name="email" id="email" placeholder="Email Id" rel="tooltip" data-placement="top" data-original-title="Enter E-mail ID">
+																	<input class="form-control" type="email" ng-model="user.email" name="email" id="email" placeholder="Email Id" rel="tooltip" data-placement="top" data-original-title="Enter E-mail ID">
 																	<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 																</div>
 															</div>
@@ -357,13 +367,13 @@
 														<div class="form-group">
 															<div class="col-md-4">
                                                                 <div class="input-group">
-																	<input class="form-control" type="text" name="companyName" id="companyName" placeholder="Company Name" rel="tooltip" data-placement="top" data-original-title="Enter Company Name">
+																	<input class="form-control" type="text" ng-model="user.company" name="companyName" id="companyName" placeholder="Company Name" rel="tooltip" data-placement="top" data-original-title="Enter Company Name">
 																	<span class="input-group-addon"><i class="fa fa-building"></i></span>
 																</div>
                                                             </div>
 															<div class="col-sm-3">
                                                                     <div class="input-group">																			
-                                                                        <select name="country" class="form-control" rel="tooltip" data-placement="top" data-original-title="Select Country">
+                                                                        <select name="country" class="form-control" rel="tooltip" ng-model="user.country" data-placement="top" data-original-title="Select Country">
                                                                             <option value="" selected="selected" disabled>Select Country</option>
                                                                             <option value="United States">United States</option>
                                                                             <option value="United Kingdom">United Kingdom</option>
@@ -373,7 +383,7 @@
                                                             </div>
                                                             <div class="col-md-3">
 																<div class="input-group">
-																	<select name="city" class="form-control" rel="tooltip" data-placement="top" data-original-title="Select City">
+																	<select name="city" class="form-control" ng-model="user.city" rel="tooltip" data-placement="top" data-original-title="Select City">
                                                                             <option value="" selected="selected" disabled="">Select City</option>
                                                                             <option value="United States">Bangalore</option>
                                                                             <option value="United Kingdom">Delhi</option>
@@ -383,7 +393,7 @@
                                                             </div>
                                                             <div class="col-md-2">
 																<div class="input-group">
-																	<input class="form-control" type="text" name="pinCode" id="pinCode" placeholder="Pin Code" data-mask="999999" rel="tooltip" data-placement="top" data-original-title="Enter Pin Code">
+																	<input class="form-control" type="text" name="pinCode" ng-model="user.pinCode" id="pinCode" placeholder="Pin Code" data-mask="99-99-99" rel="tooltip" data-placement="top" data-original-title="Enter Pin Code">
                                                                     <span class="input-group-addon"><i class="fa fa-envelope-square"></i></span>
 																</div>
 															</div>
@@ -391,30 +401,31 @@
                                                     </fieldset>
 												</div>
 												<div class="step-pane" id="step2">
-													<h3><strong>Step 2 </strong> - Credential</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <h3><strong>Step 2 </strong> - Credential</h3>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <button class="btn btn-warning pull-right" style="margin-top: 12%;" ng-click="credentialReset();"><i class="fa fa-refresh"></i> Reset </button>
+                                                        </div>
+                                                    </div>
 													<fieldset>
-                                                        <div class="form-group">                                                            
-                                                            <div class="col-md-3">
-                                                                <div class="input-group">
-																	<input class="form-control" type="text" name="emailId" id="emailId" placeholder="Email ID" rel="tooltip" data-placement="top" data-original-title="Enter E-mail ID">
-																	<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-																</div>
-                                                            </div>
-															<div class="col-md-3">
+                                                        <div class="form-group"> 
+															<div class="col-md-4">
 																<div class="input-group">
-																	<input class="form-control" type="text" name="userName" id="userName" placeholder="Username" rel="tooltip" data-placement="top" data-original-title="Enter Username">
+																	<input class="form-control" type="text" ng-model="user.userName" name="userName" id="userName" placeholder="Username" rel="tooltip" data-placement="top" data-original-title="Enter Username">
 																	<span class="input-group-addon"><i class="fa fa-user"></i></span>
 																</div>
                                                             </div>
-                                                            <div class="col-md-3">
+                                                            <div class="col-md-4">
 																<div class="input-group">
-																	<input class="form-control" type="text" name="password" id="password" placeholder="Password" rel="tooltip" data-placement="top" data-original-title="Enter Password">
+																	<input class="form-control" type="text" ng-model="user.password" name="password" id="password" placeholder="Password" rel="tooltip" data-placement="top" data-original-title="Enter Password">
 																	<span class="input-group-addon"><i class="fa fa-key"></i></span>
 																</div>
                                                             </div>
-                                                            <div class="col-md-3">
+                                                            <div class="col-md-4">
 																<div class="input-group">
-																	<input class="form-control" type="text" name="password" id="password" placeholder="Password" rel="tooltip" data-placement="top" data-original-title="Enter Confirm Password">
+																	<input class="form-control" type="text" ng-model="user.confirmPassword" name="confirmPassword" id="confirmPassword" placeholder="Confirm password" rel="tooltip" data-placement="top" data-original-title="Enter Confirm Password">
 																	<span class="input-group-addon"><i class="fa fa-key"></i></span>
 																</div>
 															</div>
@@ -422,7 +433,14 @@
                                                     </fieldset>
 												</div>
 												<div class="step-pane" id="step3">
-													<h3><strong>Step 3 </strong> - Access level</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <h3><strong>Step 3 </strong> - Access level</h3>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <button class="btn btn-warning pull-right" style="margin-top: 12%;" ng-click="accessLevelReset();"><i class="fa fa-refresh"></i> Reset </button>
+                                                        </div>
+                                                    </div>
 													<fieldset>
                                                         <div class="form-group">  
                                                             <div class="col-md-4">
@@ -430,7 +448,7 @@
                                                             </div>                                                          
                                                             <div class="col-md-4">
                                                                 <div class="input-group">
-																	<select name="city" class="form-control" rel="tooltip" data-placement="top" data-original-title="Select Access Level">
+																	<select name="accessLevel" class="form-control" ng-model="user.accessLevel" rel="tooltip" data-placement="top" data-original-title="Select Access Level">
                                                                             <option value="" selected="selected" disabled="">Select Access Level</option>
                                                                             <option value="superuser">Superuser</option>
                                                                             <option value="administrator">Administrator</option>
@@ -467,6 +485,7 @@
                                                         <div class="col-sm-3">
                                                             <span class="txt-color-darken">Female</span>
                                                         </div>
+                                                        <hr>
                                                         <div class="col-sm-1">
                                                             <i class="fa fa-user"></i> Email ID: 
                                                         </div>
@@ -490,14 +509,10 @@
                                                 </div>
 												<div class="step-pane" id="step5">
 													<h3><strong>Step 5 </strong> - Finished!</h3>
-													<br>
-													<br>
 													<h1 class="text-center text-success"><i class="fa fa-check"></i> All set!
 													<br>
-													<small>Click finish to save user details</small></h1>
-													<br>
-													<br>
-													<br>
+                                                    <small>Click finish to create New User</small> <br><br>
+                                                    <button class="btn btn-warning" type="submit">Create New User</button></h1>    
 													<br>
 												</div>
                                             </form>
@@ -658,19 +673,7 @@
 			    }
 			  });
 			// fuelux wizard
-			  var wizard = $('.wizard').wizard();
 			  
-			  wizard.on('finished', function (e, data) {
-			    //$("#fuelux-wizard").submit();
-			    //console.log("submitted!");
-			    $.smallBox({
-			      title: "Congratulations! Your form was submitted",
-			      content: "<i class='fa fa-clock-o'></i> <i>1 seconds ago...</i>",
-			      color: "#5F895F",
-			      iconSmall: "fa fa-check bounce animated",
-			      timeout: 4000
-			    });
-              });
               
             // START AND FINISH DATE
             $('#dateOfBirth').datepicker({

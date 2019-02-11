@@ -7,7 +7,7 @@
 <div class="inbox-info-bar">
 	<div class="row">
 		<div class="col-sm-9">
-			<img src="img/avatars/5.png" alt="me" class="away">
+			<img src="static/img/avatars/5.png" alt="me" class="away">
 			<strong>Sadi Orlaf</strong>
 			<span class="hidden-mobile">&lt;sadi.orlaf@smartadmin.com&gt;to <strong>me</strong> on <i>12:10AM, 12 March 2013</i></span> 
 		</div>
@@ -70,7 +70,7 @@
 
 	</small>
 	<br>	
-	<img src="img/logo-blacknwhite.png" height="20" width="auto" style="margin-top:7px; padding-right:9px; border-right:1px dotted #9B9B9B;" />
+	<img src="static/img/logo-blacknwhite.png" height="20" width="auto" style="margin-top:7px; padding-right:9px; border-right:1px dotted #9B9B9B;" />
 </div>
 
 <div class="inbox-download">
@@ -95,7 +95,6 @@
 				<span>
 					<i class="fa fa-file"></i>
 				</span>
-				
 				<br>
 				<strong>timelogs.xsl</strong> 
 				<br>
@@ -106,9 +105,10 @@
 		</li>
 	</ul>
 </div>
-
+<div class="inbox-download">
+	<div class="col-sm-12">Manish</div>
+</div>
 <div class="email-infobox">
-
 	<div class="well well-sm well-light">
 		<h5>Related Invoice</h5>
 		<ul class="list-unstyled">
@@ -119,46 +119,29 @@
 				<i class="fa fa-file fa-fw text-danger"></i><a href="javascript:void(0);"><strong> #4835 - Unpaid</strong></a>
 			</li>
 		</ul>
-
-
 	</div>
-
 	<div class="well well-sm well-light">
 		<h5>Upcoming Meetings</h5>
-		
 		<p>
 			<span class="label label-success"><i class="fa fa-check"></i> <strike>Agenda Review @ 10 AM</strike> </span>
 		</p>
-
 		<p>
 			<span class="label label-primary"><i class="fa fa-clock-o"></i> Client Meeting @ 2:30 PM</span>
 		</p>
-
 		<p>
 			<span class="label label-warning"><i class="fa fa-clock-o"></i> Salary Review @ 4:00 PM</span>
 		</p>		
 	</div>	
-
 	<ul class="list-inline">
-		<li><img src="img/avatars/5.png" alt="me" width="30px"></li>
-		<li><img src="img/avatars/3.png" alt="me" width="30px"></li>
-		<li><img src="img/avatars/sunny.png" alt="me" width="30px"></li>
+		<li><img src="static/img/avatars/5.png" alt="me" width="30px"></li>
+		<li><img src="static/img/avatars/3.png" alt="me" width="30px"></li>
+		<li><img src="static/img/avatars/sunny.png" alt="me" width="30px"></li>
 		<li><a href="javascript:void(0);">1 more</a></li>
 	</ul>
-
 </div>
-
 <script type="text/javascript">
-	
-	// DO NOT REMOVE : GLOBAL FUNCTIONS!
-	//pageSetUp();
-	
-	// PAGE RELATED SCRIPTS
-	
 	$(".table-wrap [rel=tooltip]").tooltip();
-
 	$(".replythis").click(function(){
-		loadURL("ajax/email-reply.html", $('#inbox-content > .table-wrap'));
+		loadURL("static/ajax/email-reply.html", $('#inbox-content > .table-wrap'));
 	})
-	
 </script>
